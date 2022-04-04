@@ -11,3 +11,4 @@
   - 스프링 시큐리티 테스트 2부
 - 스프링 시큐리티: 아키텍쳐
   - SecurityContextHolder와 Authentication
+  - ThreadLocal
