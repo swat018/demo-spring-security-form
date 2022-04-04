@@ -39,7 +39,7 @@ public class SampleController {
         model.addAttribute("message", "Hello " + principal.getName());
         AccountContext.setAccount(accountRepository.findByUsername(principal.getName()));
         sampleService.dashboard();
-        return "index";
+        return "dashboard";
     }
 
     @GetMapping("/admin")
