@@ -11,14 +11,12 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 @Configuration
-//@EnableWebSecurity
-@Order(Ordered.LOWEST_PRECEDENCE - 50)
+@EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.antMatcher("/**")
-                .authorizeRequests()
+        http.authorizeRequests()
                 .mvcMatchers("/", "/info", "/account/**").permitAll()
                 .mvcMatchers("/admin").hasRole("ADMIN")
                 .anyRequest().authenticated()
