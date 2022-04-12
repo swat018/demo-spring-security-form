@@ -42,6 +42,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .expressionHandler(expressionHandler())
                 .and()
             .formLogin()
+                .usernameParameter("my-username")
+                .passwordParameter("my-password")
                 .and()
             .httpBasic();
 //        http.csrf().disable();
