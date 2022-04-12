@@ -28,3 +28,4 @@
   - 스프링 시큐리티와 @Async
   - CSRF 어택 방지 필터: CsrfFilter
   - CSRF 토큰 사용 예제
+  - 로그아웃 처리 필터: LogoutFilter
