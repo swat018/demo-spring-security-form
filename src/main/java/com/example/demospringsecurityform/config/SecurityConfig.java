@@ -37,17 +37,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .mvcMatchers("/", "/info", "/account/**", "/signup").permitAll()
                 .mvcMatchers("/admin").hasRole("ADMIN")
                 .mvcMatchers("/user").hasRole("USER")
-//                .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
                 .anyRequest().authenticated()
                 .expressionHandler(expressionHandler())
                 .and()
             .formLogin()
-                .usernameParameter("my-username")
-                .passwordParameter("my-password")
+                .loginPage("/login")
+                .permitAll()
                 .and()
             .httpBasic();
-//        http.csrf().disable();
-        http.logout().logoutSuccessUrl("/");
+        http.logout()
+                .logoutSuccessUrl("/");
+
+
 
         SecurityContextHolder.setStrategyName(SecurityContextHolder.MODE_INHERITABLETHREADLOCAL);
     }
