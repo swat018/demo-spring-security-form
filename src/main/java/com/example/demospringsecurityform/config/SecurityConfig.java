@@ -47,7 +47,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .httpBasic();
         http.logout()
                 .logoutSuccessUrl("/");
-
+//        http.anonymous().principal("anonymousUser");
 
 
         SecurityContextHolder.setStrategyName(SecurityContextHolder.MODE_INHERITABLETHREADLOCAL);
