@@ -8,6 +8,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.FilterInvocation;
 import org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler;
@@ -47,8 +48,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .httpBasic();
         http.logout()
                 .logoutSuccessUrl("/");
-//        http.anonymous().principal("anonymousUser");
 
+//        http.sessionManagement()
+////                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+//                .sessionFixation()
+//                    .changeSessionId()
+//                .maximumSessions(1)
+//                    .maxSessionsPreventsLogin(true);
 
         SecurityContextHolder.setStrategyName(SecurityContextHolder.MODE_INHERITABLETHREADLOCAL);
     }
