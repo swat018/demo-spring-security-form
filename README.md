@@ -33,3 +33,4 @@
   - 로그인/로그아웃 폼 커스터마이징
   - 익명 인증 필터: AnonymousAuthenticationFilter
   - 세션 관리 필터: SessionManagementFilter
+  - 인증/인가 예외 처리 필터: ExceptionTranslationFilter
